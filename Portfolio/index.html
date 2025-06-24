@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nada Al Asali | Portfolio</title>
+<style>
+
+/* General Reset */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #222;
+  color: white;
+  z-index: 1000;
+}
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin: 0;
+}
+.navbar li {
+  margin: 0 20px;
+}
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+.navbar a:hover {
+  color: #00d9ff;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* This was missing */
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero-text {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+/* Centered Image */
+.center-image {
+  text-align: center;
+  padding: 40px;
+}
+.center-image img {
+  width: 200px;
+  border-radius: 20px;
+  filter: grayscale(60%) contrast(110%);
+}
+
+/* Table Styling */
+.table-section {
+  padding: 40px;
+  text-align: center;
+}
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 60%;
+}
+th, td {
+  border: 2px solid #555;
+  padding: 15px;
+}
+th {
+  background-color: #eee;
+}
+
+/* Text Over Image */
+.image-container {
+  position: relative;
+  text-align: center;
+}
+.image-container img {
+  width: 100%;
+  height: auto;
+}
+.text-over-image {
+  position: absolute;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Two Column Layout */
+.two-column {
+  display: flex;
+  padding: 40px;
+}
+.column {
+  width: 50%;
+  height: 200px;
+  padding: 20px;
+  color: #333;
+}
+
+/* Hover Effect on Paragraph */
+.hover-paragraph {
+  text-align: center;
+  padding: 40px;
+}
+.hover-paragraph p {
+  transition: 0.3s ease;
+}
+.hover-paragraph p:hover {
+  color: purple;
+  font-size: 1.3rem;
+}
+
+/* Image Overlay Fade */
+.fade-container {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+.fade-img {
+  width: 100%;
+  transition: 0.5s ease;
+}
+.fade-container:hover .fade-img {
+  opacity: 0.5;
+}
+.fade-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.fade-container:hover .fade-overlay {
+  opacity: 1;
+}
+
+/* Footer */
+footer {
+  background-color: #222;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+}
+
+</style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#media">Media</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <video autoplay muted loop class="background-video">
+      <source src="https://cdn.pixabay.com/video/2022/09/20/131993-751915314_tiny.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-text">
+      <h1>Nada Al Asali</h1>
+      <p>A To Be Web Developer</p>
+    </div>
+  </section>
+
+  <!-- Centered Image with CSS filter & rounded edges -->
+  <section id="about" class="center-image">
+    <h2>Meet Nada</h2>
+    <img src="https://cdn.pixabay.com/photo/2015/05/31/15/14/woman-792162_1280.jpg" alt="Nada Al Asali">
+  </section>
+
+  <!-- Table Section -->
+  <section class="table-section">
+    <h2>Skills Table</h2>
+    <table>
+      <tr>
+        <th>Skill</th>
+        <th>Level</th>
+      </tr>
+      <tr>
+        <td>HTML</td>
+        <td>Advanced</td>
+      </tr>
+      <tr>
+        <td>CSS</td>
+        <td>Advanced</td>
+      </tr>
+      <tr>
+        <td>JavaScript</td>
+        <td>None</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- Text Over Image -->
+  <section id="media" class="image-text-overlay">
+    <div class="image-container">
+      <img src="https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849825_1280.jpg" alt="Overlay">
+      <div class="text-over-image">Creativity in Every Line</div>
+    </div>
+  </section>
+
+  <!-- Two Column Layout -->
+  <section class="two-column">
+    <div class="column">
+      <h3>Column 1</h3>
+      <p>This is the left side of the layout.</p>
+    </div>
+    <div class="column">
+      <h3>Column 2</h3>
+      <p>This is the right side of the layout.</p>
+    </div>
+  </section>
+
+  <!-- Hover Paragraph -->
+  <section class="hover-paragraph">
+    <p>Hover over me to see a change in color and size!</p>
+  </section>
+
+  <!-- Image Overlay Fade -->
+  <section class="fade-image-section">
+    <div class="fade-container">
+      <img src="https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849825_1280.jpg" alt="Fade" class="fade-img">
+      <div class="fade-overlay">Fading Into Design</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Nada Al Asali</p>
+  </footer>
+</body>
+</html>
